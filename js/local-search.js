@@ -292,7 +292,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Handle and trigger popup window
-  document.querySelector('.popup-trigger').addEventListener('click', () => {
+  document.querySelector('.popup-trigger').addEventListener('click', event => {
+    event.stopPropagation();
     if (isfetched === false) {
       searchFunc();
     } else {

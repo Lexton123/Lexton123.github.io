@@ -1,5 +1,13 @@
 /* global NexT, CONFIG */
 
+HTMLElement.prototype.outerHeight = function(flag) {
+  var height = this.offsetHeight;
+  if (!flag) return height;
+  var style = window.getComputedStyle(this);
+  height += parseInt(style.marginTop, 10) + parseInt(style.marginBottom, 10);
+  return height;
+};
+
 HTMLElement.prototype.wrap = function(wrapper) {
   this.parentNode.insertBefore(wrapper, this);
   this.parentNode.removeChild(this);
@@ -156,7 +164,7 @@ NexT.utils = {
         scrollPercent = Math.min(scrollPercentRounded, 100) + '%';
       }
       if (backToTop) {
-        backToTop.classList.toggle('back-to-top-on', window.scrollY > THRESHOLD);
+        window.scrollY > THRESHOLD ? backToTop.classList.add('back-to-top-on') : backToTop.classList.remove('back-to-top-on');
         backToTop.querySelector('span').innerText = scrollPercent;
       }
       if (readingProgressBar) {
@@ -224,7 +232,11 @@ NexT.utils = {
       if (!target) return;
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       var isSubPath = target.pathname !== CONFIG.root && location.pathname.indexOf(target.pathname) === 0;
-      element.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
+      if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
+        element.classList.add('menu-item-active');
+      } else {
+        element.classList.remove('menu-item-active');
+      }
     });
   },
 
@@ -347,7 +359,7 @@ NexT.utils = {
    */
   initSidebarDimension: function() {
     var sidebarNav = document.querySelector('.sidebar-nav');
-    var sidebarNavHeight = sidebarNav.style.display !== 'none' ? sidebarNav.offsetHeight : 0;
+    var sidebarNavHeight = sidebarNav.style.display !== 'none' ? sidebarNav.outerHeight(true) : 0;
     var sidebarOffset = CONFIG.sidebar.offset || 12;
     var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : 0;
     var sidebarSchemePadding = CONFIG.sidebarPadding + sidebarNavHeight + sidebarb2tHeight;
