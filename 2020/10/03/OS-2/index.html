@@ -55,18 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="只要超越了痛苦，在对岸就会有彩虹般的幸福等待着我们。">
-<meta name="keywords" content="良逸的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="良逸">
-<meta property="og:url" content="http://Lexton123.github.io/tags/二进制炸弹/index.html">
+  <meta name="description" content="操作系统笔记-2">
+<meta name="keywords" content="OS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OS-2">
+<meta property="og:url" content="http://Lexton123.github.io/2020/10/03/OS-2/index.html">
 <meta property="og:site_name" content="良逸">
-<meta property="og:description" content="只要超越了痛苦，在对岸就会有彩虹般的幸福等待着我们。">
+<meta property="og:description" content="操作系统笔记-2">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-10-03T07:31:18.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="良逸">
-<meta name="twitter:description" content="只要超越了痛苦，在对岸就会有彩虹般的幸福等待着我们。">
-  <link rel="canonical" href="http://Lexton123.github.io/tags/二进制炸弹/">
+<meta name="twitter:title" content="OS-2">
+<meta name="twitter:description" content="操作系统笔记-2">
+  <link rel="canonical" href="http://Lexton123.github.io/2020/10/03/OS-2/">
 
 
 <script id="page-configurations">
@@ -74,13 +75,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: 二进制炸弹 | 良逸</title>
+  <title>OS-2 | 良逸</title>
   
 
 
@@ -250,81 +251,237 @@
         <div class="content-wrap">
             
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block tag">
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">二进制炸弹<small>标签</small>
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://Lexton123.github.io/2020/10/03/OS-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiangYi">
+      <meta itemprop="description" content="只要超越了痛苦，在对岸就会有彩虹般的幸福等待着我们。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="良逸">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">OS-2
+
+          
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-10-03 14:50:19" itemprop="dateCreated datePublished" datetime="2020-10-03T14:50:19+08:00">2020-10-03</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/专业笔记/" itemprop="url" rel="index"><span itemprop="name">专业笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <div class="post-description">操作系统笔记-2</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+        <a id="more"></a><p>[TOC]</p><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h4 id="进程（Process）"><a href="#进程（Process）" class="headerlink" title="进程（Process）"></a>进程（Process）</h4><blockquote>
+<p>程序的1次执行</p>
+<p>程序是进程的静态实体（即执行代码）。</p>
+<p>程序是静态的，进程是动态的。</p>
+<p>进程：程序、数据、PCB</p>
+</blockquote><a id="more"></a>
 
-  
-  
 
-  
+
+<h5 id="进程的5种基本状态"><a href="#进程的5种基本状态" class="headerlink" title="进程的5种基本状态"></a>进程的5种基本状态</h5><ul>
+<li>新建</li>
+<li>就绪（就绪挂起）</li>
+<li>运行</li>
+<li>阻塞（阻塞挂起）</li>
+<li>完成</li>
+</ul>
+<h5 id="进程控制块——PCB"><a href="#进程控制块——PCB" class="headerlink" title="进程控制块——PCB"></a>进程控制块——PCB</h5><ul>
+<li>进程标识信息</li>
+<li>CPU现场</li>
+<li>进程调度信息<ul>
+<li>状态</li>
+<li>优先级</li>
+<li>阻塞条件</li>
+<li>占用时间</li>
+</ul>
+</li>
+<li>占用资源的信息</li>
+</ul>
+<blockquote>
+<p>同一状态进程的PCB组成一个链表</p>
+</blockquote>
+<h4 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h4><ul>
+<li>进程创建原语</li>
+<li>进程撤销原语</li>
+<li>阻塞原语</li>
+<li>唤醒原语</li>
+<li>挂起原语</li>
+<li>激活（解挂）原语</li>
+<li>改变进程优先级</li>
+</ul>
+<h4 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h4><h6 id="多个进程的并发执行"><a href="#多个进程的并发执行" class="headerlink" title="多个进程的并发执行"></a>多个进程的并发执行</h6><blockquote>
+<p>同步：严格的时序关系</p>
+<p>互斥：不能同时访问共享资源</p>
+</blockquote>
+<h6 id="临界资源与临界区"><a href="#临界资源与临界区" class="headerlink" title="临界资源与临界区"></a>临界资源与临界区</h6><h6 id="互斥方案"><a href="#互斥方案" class="headerlink" title="互斥方案"></a>互斥方案</h6><blockquote>
+<p>(1）任何两个进程不能同时处于临界区。<br>(2）临界区外的进程不应阻止其他进程进入临界区。<br>(3）不应使进程在临界区外无休止地等待。就是说，临界区代码执行时间要短。<br>(4）不应对CPU的个数和进程之间的相对运行速度作任何假设。</p>
+</blockquote>
+<p>1.设置锁变量lock（错误）</p>
+<p>2.严格轮转法（不可取）</p>
+<p>3.Peterson解决方案</p>
+<p>4.关中断</p>
+<p>5.机器指令 TSL指令 Swap指令 （缺点：忙等待）</p>
+<h6 id="信号量（Semaphore）"><a href="#信号量（Semaphore）" class="headerlink" title="信号量（Semaphore）"></a>信号量（Semaphore）</h6><blockquote>
+<p>取值是整数</p>
+<p>P、V两个原子操作可以访问</p>
+<p>P：请求分配 -1</p>
+<p>V：释放资源 +1</p>
+<p>应用实例：生产资-消费者问题（有界缓冲问题）</p>
+<ul>
+<li><strong>注意事项</strong><ul>
+<li>V操作是释放资源的，每个进程中连续多个V操作的出现次序关系不是很大。</li>
+<li>每个进程中的多个P操作出现顺序不能颠倒。通常应先执行对资源信号量的P操作，再执行对互斥信号量的P操作，否则可能会引起死锁。</li>
+<li>互斥信号量的P操作尽可能靠近临界区。</li>
+<li>P操作和V操作在很多情况下是成对出现的。当为互斥操作时，它们同处于同一进程;当为同步操作时，则不在同一进程中出现。</li>
+<li>用信号量可以解决任何同步互斥问题。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="经典进程同步问题"><a href="#经典进程同步问题" class="headerlink" title="经典进程同步问题"></a>经典进程同步问题</h4><blockquote>
+<p>哲学家进餐问题</p>
+<p>读者-写者问题</p>
+<p>睡眠的理发师问题</p>
+</blockquote>
+<h4 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h4><h6 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h6><ul>
+<li>共享存储区</li>
+<li>消息传递<ul>
+<li>消息队列</li>
+<li>邮箱</li>
+</ul>
+</li>
+<li>管道（有名/无名）</li>
+</ul>
+<h6 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h6><blockquote>
+<p>通常，Send采用非阻塞，Receive可采用两种方式。</p>
+</blockquote>
+<h4 id="线程（Thread）"><a href="#线程（Thread）" class="headerlink" title="线程（Thread）"></a>线程（Thread）</h4><blockquote>
+<p>线程是进程的1条执行路径</p>
+</blockquote>
+<p>用户级线程</p>
+<p>核心级线程</p>
+
+    </div>
+
     
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiangYi</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://Lexton123.github.io/2020/10/03/OS-2/" title="OS-2">http://Lexton123.github.io/2020/10/03/OS-2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+</div>
+
+      
+<div>
   
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;"><br>-----------感谢您的阅读-----------</div>
+    
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+</div>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-17T21:42:37+08:00"
-              content="2019-11-17">
-          11-17
-        </time>
-      </div>
-
-      <h2 class="post-title">
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/OS/" rel="tag"><i class="fa fa-tag"></i> OS</a>
+            
+          </div>
         
-          <a class="post-title-link" href="/2019/11/17/binary-bomb/" itemprop="url">
-            <span itemprop="name">关于二进制炸弹实验的简单化题解</span>
-          </a>
+
         
-      </h2>
 
-    </header>
-  </article>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2020/10/03/OS-1/" rel="next" title="OS-1">
+                  <i class="fa fa-chevron-left"></i> OS-1
+                </a>
+              
+            </div>
 
+            <span class="post-nav-divider"></span>
 
-
-    </div>
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
   </div>
   
   
   
+  </article>
 
-  
-
+  </div>
 
 
           </div>
@@ -343,6 +500,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -355,6 +517,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程管理"><span class="nav-number">1.</span> <span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程（Process）"><span class="nav-number">1.1.</span> <span class="nav-text">进程（Process）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进程的5种基本状态"><span class="nav-number">1.1.1.</span> <span class="nav-text">进程的5种基本状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进程控制块——PCB"><span class="nav-number">1.1.2.</span> <span class="nav-text">进程控制块——PCB</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程控制"><span class="nav-number">1.2.</span> <span class="nav-text">进程控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程同步"><span class="nav-number">1.3.</span> <span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#多个进程的并发执行"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">多个进程的并发执行</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#临界资源与临界区"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">临界资源与临界区</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#互斥方案"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">互斥方案</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#信号量（Semaphore）"><span class="nav-number">1.3.0.4.</span> <span class="nav-text">信号量（Semaphore）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#经典进程同步问题"><span class="nav-number">1.4.</span> <span class="nav-text">经典进程同步问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进程间通信"><span class="nav-number">1.5.</span> <span class="nav-text">进程间通信</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#类型"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">类型</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#消息队列"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">消息队列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程（Thread）"><span class="nav-number">1.6.</span> <span class="nav-text">线程（Thread）</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
