@@ -1,16 +1,597 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ partial('_macro/post.swig', {post: page}) }}
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-loading-bar.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lexton123.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EOS_lab记录">
+<meta property="og:url" content="http://lexton123.github.io/2020/10/08/EOS-lab%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="良逸">
+<meta property="og:description" content="。。。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-08T14:16:23.000Z">
+<meta property="article:modified_time" content="2020-10-12T12:54:23.398Z">
+<meta property="article:author" content="LiangYi">
+<meta property="article:tag" content="EOS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://lexton123.github.io/2020/10/08/EOS-lab%E8%AE%B0%E5%BD%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>EOS_lab记录 | 良逸</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">良逸</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">用来记录这世间</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/Lexton123" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lexton123.github.io/2020/10/08/EOS-lab%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="LiangYi">
+      <meta itemprop="description" content="只要超越了痛苦，在对岸就会有彩虹般的幸福等待着我们。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="良逸">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          EOS_lab记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-08 22:16:23" itemprop="dateCreated datePublished" datetime="2020-10-08T22:16:23+08:00">2020-10-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-12 20:54:23" itemprop="dateModified" datetime="2020-10-12T20:54:23+08:00">2020-10-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">实验</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">。。。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <a id="more"></a>
+
+<h4 id="EOS介绍"><a href="#EOS介绍" class="headerlink" title="EOS介绍"></a>EOS介绍</h4><blockquote>
+<p>​        EOS 是一个可以在 Intel X86 平台上运行的、面向教学的开源操作系统。为了让 EOS 适合于教学，EOS 被设计的十分小巧，并且尽量保持架构简单。但是，EOS 仍然涵盖了系统引导、进程管理、内存管理、IO 管理、文件系统等重要的操作系统概念。</p>
+<p>​        EOS 有配套的 IDE (Integrated Development Environment)实验环境。该 IDE 环境可以直接在 Windows 操作系统上安装和卸载，用户界面和操作习惯与 Microsoft Visual Studio 完全类似，有经验的读者可以 迅速上手。</p>
+<p><strong>实验网站：</strong>codecode</p>
+</blockquote>
+<h4 id="EOSLab安装问题"><a href="#EOSLab安装问题" class="headerlink" title="EOSLab安装问题"></a>EOSLab安装问题</h4><h6 id="Engintime-OS-Lab安装包为msi文件，安装时可能报错2502、2503。"><a href="#Engintime-OS-Lab安装包为msi文件，安装时可能报错2502、2503。" class="headerlink" title="Engintime OS Lab安装包为msi文件，安装时可能报错2502、2503。"></a>Engintime OS Lab安装包为msi文件，安装时可能报错2502、2503。</h6><h6 id="解决方案：使用管理员的命令提示符，输入下列命令即可顺利安装。"><a href="#解决方案：使用管理员的命令提示符，输入下列命令即可顺利安装。" class="headerlink" title="解决方案：使用管理员的命令提示符，输入下列命令即可顺利安装。"></a>解决方案：使用管理员的命令提示符，输入下列命令即可顺利安装。</h6><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">msiexec /<span class="keyword">package</span> <span class="title">&quot;msi file path&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="EOSLab使用"><a href="#EOSLab使用" class="headerlink" title="EOSLab使用"></a>EOSLab使用</h4><h6 id="使用前需安装git，并配置好email和name"><a href="#使用前需安装git，并配置好email和name" class="headerlink" title="使用前需安装git，并配置好email和name"></a>使用前需安装git，并配置好email和name</h6><h6 id="pull和push前需要填写codecode账号的密码"><a href="#pull和push前需要填写codecode账号的密码" class="headerlink" title="pull和push前需要填写codecode账号的密码"></a>pull和push前需要填写codecode账号的密码</h6><h4 id="实验对应实验指导书表"><a href="#实验对应实验指导书表" class="headerlink" title="实验对应实验指导书表"></a>实验对应实验指导书表</h4><table>
+<thead>
+<tr>
+<th>实验</th>
+<th>指导书对应实验</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.操作系统启动（2）</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2.线程状态及转换（3）</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3.进程同步（4）</td>
+<td>5</td>
+</tr>
+<tr>
+<td>4.线程调度（4）</td>
+<td>6</td>
+</tr>
+<tr>
+<td>5.物理存储器与进程逻辑地址空间管理（2）</td>
+<td>7</td>
+</tr>
+<tr>
+<td>6.FAT12文件系统（3）</td>
+<td>14</td>
+</tr>
+<tr>
+<td>7.扩展实验（2）</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="实验0：实验环境使用"><a href="#实验0：实验环境使用" class="headerlink" title="实验0：实验环境使用"></a>实验0：实验环境使用</h4><p>….</p>
+<h6 id="Tips："><a href="#Tips：" class="headerlink" title="Tips："></a>Tips：</h6><blockquote>
+<h6 id="每个实验都是给一个kernel去修改"><a href="#每个实验都是给一个kernel去修改" class="headerlink" title="每个实验都是给一个kernel去修改"></a>每个实验都是给一个kernel去修改</h6><p>生成完整版本的SDK指Debug和Realease</p>
+<p>&amp;Semaphore-&gt;WaitListHead不要忘记符号  &amp; </p>
+</blockquote>
+<hr>
+<h2 id="所以可以这样取巧吗？COPY下一个版本的实验的代码？？？？？（猜想）"><a href="#所以可以这样取巧吗？COPY下一个版本的实验的代码？？？？？（猜想）" class="headerlink" title="所以可以这样取巧吗？COPY下一个版本的实验的代码？？？？？（猜想）"></a>所以可以这样取巧吗？COPY下一个版本的实验的代码？？？？？（猜想）</h2><hr>
+<h4 id="实验1：操作系统的启动"><a href="#实验1：操作系统的启动" class="headerlink" title="实验1：操作系统的启动"></a>实验1：操作系统的启动</h4><h6 id="注意：在实验中可能会修改“项目名右键-属性-远程目标机”多次，预期界面不一致时可以检查这个配置是否正确！"><a href="#注意：在实验中可能会修改“项目名右键-属性-远程目标机”多次，预期界面不一致时可以检查这个配置是否正确！" class="headerlink" title="注意：在实验中可能会修改“项目名右键-属性-远程目标机”多次，预期界面不一致时可以检查这个配置是否正确！"></a>注意：在实验中可能会修改“项目名右键-属性-远程目标机”多次，预期界面不一致时可以检查这个配置是否正确！</h6><h4 id="实验2：线程状态及转换"><a href="#实验2：线程状态及转换" class="headerlink" title="实验2：线程状态及转换"></a>实验2：线程状态及转换</h4><p>在这个实验中需要实现的是resume操作，psspnd.c中PsResumThread函数</p>
+<p>需要注意的是，恢复操作可以分为三步</p>
+<blockquote>
+<p>​            // 1.从挂起队列移除<br>​            ListRemoveEntry(&amp;SuspendListHead);<br>​            // 2.恢复就绪<br>​            PspReadyThread(Thread);<br>​            // 3.线程调度<br>​            PspThreadSchedule();</p>
+</blockquote>
+<p>这个操作是错误的。（仅第一次挂起恢复时有效，第二次挂起报错</p>
+<h6 id="原因分析："><a href="#原因分析：" class="headerlink" title="原因分析："></a>原因分析：</h6><p>在rtl.h中发现了ListRemoveEntry函数的原型为</p>
+<blockquote>
+<p>PLIST_ENTRY ListRemoveEntry(PLIST_ENTRY ListEntry);<br>PLIST_ENTRY ListRemoveHead(PLIST_ENTRY ListHead);<br>PLIST_ENTRY ListRemoveTail(PLIST_ENTRY ListHead);</p>
+</blockquote>
+<p>需要区别一下ListHead和ListEntry</p>
+<p>只需把第一行代码参数改为&amp;Thread-&gt;StateListEntry即可</p>
+<h6 id="教训：使用函数前去找原型！！！"><a href="#教训：使用函数前去找原型！！！" class="headerlink" title="教训：使用函数前去找原型！！！"></a>教训：使用函数前去找原型！！！</h6><h4 id="实验3：进程同步"><a href="#实验3：进程同步" class="headerlink" title="实验3：进程同步"></a>实验3：进程同步</h4><blockquote>
+<p>0xffffffff是 -1</p>
+</blockquote>
+<h6 id="先判断再循环比先循环再判断可能更好一点！！！"><a href="#先判断再循环比先循环再判断可能更好一点！！！" class="headerlink" title="先判断再循环比先循环再判断可能更好一点！！！"></a>先判断再循环比先循环再判断可能更好一点！！！</h6><h5 id="a这，注意哦，实验3需要fork两个项目，内核和应用程序！！！！！"><a href="#a这，注意哦，实验3需要fork两个项目，内核和应用程序！！！！！" class="headerlink" title="a这，注意哦，实验3需要fork两个项目，内核和应用程序！！！！！"></a>a这，注意哦，实验3需要fork两个项目，内核和应用程序！！！！！</h5>
+    </div>
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;"><br>-------------本文结束 ☺ 感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LiangYi
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://lexton123.github.io/2020/10/08/EOS-lab%E8%AE%B0%E5%BD%95/" title="EOS_lab记录">http://lexton123.github.io/2020/10/08/EOS-lab记录/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/EOS/" rel="tag"><i class="fa fa-tag"></i> EOS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/05/%E9%85%8D%E7%BD%AEU%E7%9B%98%E4%BE%BF%E6%90%BA%E5%BC%8Flinux%E7%B3%BB%E7%BB%9F/" rel="prev" title="配置U盘便携式linux系统">
+      <i class="fa fa-chevron-left"></i> 配置U盘便携式linux系统
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#EOS%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">EOS介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EOSLab%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">EOSLab安装问题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Engintime-OS-Lab%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%BAmsi%E6%96%87%E4%BB%B6%EF%BC%8C%E5%AE%89%E8%A3%85%E6%97%B6%E5%8F%AF%E8%83%BD%E6%8A%A5%E9%94%992502%E3%80%812503%E3%80%82"><span class="nav-number">2.0.1.</span> <span class="nav-text">Engintime OS Lab安装包为msi文件，安装时可能报错2502、2503。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A%E4%BD%BF%E7%94%A8%E7%AE%A1%E7%90%86%E5%91%98%E7%9A%84%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%EF%BC%8C%E8%BE%93%E5%85%A5%E4%B8%8B%E5%88%97%E5%91%BD%E4%BB%A4%E5%8D%B3%E5%8F%AF%E9%A1%BA%E5%88%A9%E5%AE%89%E8%A3%85%E3%80%82"><span class="nav-number">2.0.2.</span> <span class="nav-text">解决方案：使用管理员的命令提示符，输入下列命令即可顺利安装。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EOSLab%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">EOSLab使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%89%8D%E9%9C%80%E5%AE%89%E8%A3%85git%EF%BC%8C%E5%B9%B6%E9%85%8D%E7%BD%AE%E5%A5%BDemail%E5%92%8Cname"><span class="nav-number">3.0.1.</span> <span class="nav-text">使用前需安装git，并配置好email和name</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#pull%E5%92%8Cpush%E5%89%8D%E9%9C%80%E8%A6%81%E5%A1%AB%E5%86%99codecode%E8%B4%A6%E5%8F%B7%E7%9A%84%E5%AF%86%E7%A0%81"><span class="nav-number">3.0.2.</span> <span class="nav-text">pull和push前需要填写codecode账号的密码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E5%AF%B9%E5%BA%94%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">实验对应实验指导书表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C0%EF%BC%9A%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E4%BD%BF%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">实验0：实验环境使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Tips%EF%BC%9A"><span class="nav-number">5.0.1.</span> <span class="nav-text">Tips：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%AF%8F%E4%B8%AA%E5%AE%9E%E9%AA%8C%E9%83%BD%E6%98%AF%E7%BB%99%E4%B8%80%E4%B8%AAkernel%E5%8E%BB%E4%BF%AE%E6%94%B9"><span class="nav-number">5.0.2.</span> <span class="nav-text">每个实验都是给一个kernel去修改</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E4%BB%A5%E5%8F%AF%E4%BB%A5%E8%BF%99%E6%A0%B7%E5%8F%96%E5%B7%A7%E5%90%97%EF%BC%9FCOPY%E4%B8%8B%E4%B8%80%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%AE%9E%E9%AA%8C%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%88%E7%8C%9C%E6%83%B3%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">所以可以这样取巧吗？COPY下一个版本的实验的代码？？？？？（猜想）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C1%EF%BC%9A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%90%AF%E5%8A%A8"><span class="nav-number">1.</span> <span class="nav-text">实验1：操作系统的启动</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A%E5%9C%A8%E5%AE%9E%E9%AA%8C%E4%B8%AD%E5%8F%AF%E8%83%BD%E4%BC%9A%E4%BF%AE%E6%94%B9%E2%80%9C%E9%A1%B9%E7%9B%AE%E5%90%8D%E5%8F%B3%E9%94%AE-%E5%B1%9E%E6%80%A7-%E8%BF%9C%E7%A8%8B%E7%9B%AE%E6%A0%87%E6%9C%BA%E2%80%9D%E5%A4%9A%E6%AC%A1%EF%BC%8C%E9%A2%84%E6%9C%9F%E7%95%8C%E9%9D%A2%E4%B8%8D%E4%B8%80%E8%87%B4%E6%97%B6%E5%8F%AF%E4%BB%A5%E6%A3%80%E6%9F%A5%E8%BF%99%E4%B8%AA%E9%85%8D%E7%BD%AE%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE%EF%BC%81"><span class="nav-number">1.0.1.</span> <span class="nav-text">注意：在实验中可能会修改“项目名右键-属性-远程目标机”多次，预期界面不一致时可以检查这个配置是否正确！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C2%EF%BC%9A%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E5%8F%8A%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.</span> <span class="nav-text">实验2：线程状态及转换</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90%EF%BC%9A"><span class="nav-number">2.0.1.</span> <span class="nav-text">原因分析：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%95%99%E8%AE%AD%EF%BC%9A%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E5%89%8D%E5%8E%BB%E6%89%BE%E5%8E%9F%E5%9E%8B%EF%BC%81%EF%BC%81%EF%BC%81"><span class="nav-number">2.0.2.</span> <span class="nav-text">教训：使用函数前去找原型！！！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C3%EF%BC%9A%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="nav-number">3.</span> <span class="nav-text">实验3：进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%85%88%E5%88%A4%E6%96%AD%E5%86%8D%E5%BE%AA%E7%8E%AF%E6%AF%94%E5%85%88%E5%BE%AA%E7%8E%AF%E5%86%8D%E5%88%A4%E6%96%AD%E5%8F%AF%E8%83%BD%E6%9B%B4%E5%A5%BD%E4%B8%80%E7%82%B9%EF%BC%81%EF%BC%81%EF%BC%81"><span class="nav-number">3.0.1.</span> <span class="nav-text">先判断再循环比先循环再判断可能更好一点！！！</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#a%E8%BF%99%EF%BC%8C%E6%B3%A8%E6%84%8F%E5%93%A6%EF%BC%8C%E5%AE%9E%E9%AA%8C3%E9%9C%80%E8%A6%81fork%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%86%85%E6%A0%B8%E5%92%8C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81"><span class="nav-number">3.1.</span> <span class="nav-text">a这，注意哦，实验3需要fork两个项目，内核和应用程序！！！！！</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LiangYi"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">LiangYi</p>
+  <div class="site-description" itemprop="description">只要超越了痛苦，在对岸就会有彩虹般的幸福等待着我们。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Lexton123" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Lexton123" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1473752555@qq.com" title="E-Mail → mailto:1473752555@qq.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.baidu.com/" title="http:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">百度</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://mail.qq.com/" title="http:&#x2F;&#x2F;mail.qq.com" rel="noopener" target="_blank">QQMail</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiangYi</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  访问量:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count"> | Blog共4k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/fireworks.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/nico.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
+
